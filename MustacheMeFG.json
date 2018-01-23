@@ -1,0 +1,64 @@
+{
+    "taskDefinition": {
+        "status": "ACTIVE", 
+        "networkMode": "awsvpc", 
+        "family": "Mustachame", 
+        "placementConstraints": [], 
+        "requiresAttributes": [
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            }, 
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            }, 
+            {
+                "name": "ecs.capability.task-eni"
+            }, 
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            }, 
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            }, 
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            }, 
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            }
+        ], 
+        "cpu": "1024", 
+        "executionRoleArn": "arn:aws:iam::822234221683:role/ecsTaskExecutionRole", 
+        "compatibilities": [
+            "EC2", 
+            "FARGATE"
+        ], 
+        "volumes": [], 
+        "memory": "2048", 
+        "requiresCompatibilities": [
+            "FARGATE"
+        ], 
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:822234221683:task-definition/Mustachame:1", 
+        "containerDefinitions": [
+            {
+                "environment": [], 
+                "name": "mustacheme", 
+                "mountPoints": [], 
+                "image": "822234221683.dkr.ecr.us-east-1.amazonaws.com/mustacheme:latest", 
+                "cpu": 0, 
+                "portMappings": [], 
+                "logConfiguration": {
+                    "logDriver": "awslogs", 
+                    "options": {
+                        "awslogs-region": "us-east-1", 
+                        "awslogs-stream-prefix": "ecs", 
+                        "awslogs-group": "/ecs/Mustachame"
+                    }
+                }, 
+                "essential": true, 
+                "volumesFrom": []
+            }
+        ], 
+        "revision": 1
+    }
+}

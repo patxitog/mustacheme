@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mustacheme
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mustacheme
+    spec:
+      containers:
+      - name: mustacheme
+        image: 822234221683.dkr.ecr.us-east-1.amazonaws.com/mustacheme:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
